@@ -1,8 +1,10 @@
 ﻿using DataAccess.Abstract;
 using Entities.Concrete;
+using Entities.DTOs;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 
 namespace DataAccess.Concrete.InMemoryData
@@ -15,11 +17,11 @@ namespace DataAccess.Concrete.InMemoryData
         {
             _cars = new List<Car> {
             
-            new Car{CarId=1, CarBrandId=1, CarColorId=1, CarModelYear=2018, DailyPrice=240, Description="Birinci sahibinden" },
-            new Car{CarId=2, CarBrandId=1, CarColorId=2, CarModelYear=2016, DailyPrice=200, Description="Full bakimli " },
-            new Car{CarId=3, CarBrandId=2, CarColorId=2, CarModelYear=2017, DailyPrice=220, Description=" Teknik Servis Bakimli" },
-            new Car{CarId=4, CarBrandId=2, CarColorId=1, CarModelYear=2019, DailyPrice=250, Description=" Degisen yok " },
-            new Car{CarId=5, CarBrandId=1, CarColorId=2, CarModelYear=2020, DailyPrice=280, Description=" Dusuk km de " },
+            new Car{CarId=1, CarBrandId=1, CarColorId=1, CarModelYear=2018, CarDailyPrice=240, Description="Birinci sahibinden" },
+            new Car{CarId=2, CarBrandId=1, CarColorId=2, CarModelYear=2016, CarDailyPrice=200, Description="Full bakimli " },
+            new Car{CarId=3, CarBrandId=2, CarColorId=2, CarModelYear=2017, CarDailyPrice=220, Description=" Teknik Servis Bakimli" },
+            new Car{CarId=4, CarBrandId=2, CarColorId=1, CarModelYear=2019, CarDailyPrice=250, Description=" Degisen yok " },
+            new Car{CarId=5, CarBrandId=1, CarColorId=2, CarModelYear=2020, CarDailyPrice=280, Description=" Dusuk km de " },
 
             };
         }
@@ -34,9 +36,19 @@ namespace DataAccess.Concrete.InMemoryData
             _cars.Remove(carToDelete);
         }
 
+        public Car Get(Expression<Func<Car, bool>> filter)
+        {
+            throw new NotImplementedException();
+        }
+
         public List<Car> GetAll()
         {
             return _cars;
+        }
+
+        public List<Car> GetAll(Expression<Func<Car, bool>> filter = null)
+        {
+            throw new NotImplementedException();
         }
 
         public List<Car> GetByBrands(int brandId)
@@ -58,6 +70,11 @@ namespace DataAccess.Concrete.InMemoryData
             return _cars.First(p => p.CarId == carId);
         }
 
+        public List<CarDetailDto> GetDetailDtos()
+        {
+            throw new NotImplementedException();
+        }
+
         public void Update(Car car)
         {
             Car carToUpdate = _cars.FirstOrDefault(p => p.CarId == car.CarId);
@@ -65,7 +82,7 @@ namespace DataAccess.Concrete.InMemoryData
             carToUpdate.CarBrandId = car.CarBrandId;
             carToUpdate.CarColorId = car.CarColorId;
             carToUpdate.CarModelYear = car.CarModelYear;
-            carToUpdate.DailyPrice = car.DailyPrice;
+            carToUpdate.CarDailyPrice = car.CarDailyPrice;
             carToUpdate.Description = car.Description;
         }
     }

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Entities.Abstract
+namespace Core.Entities
 {//Burayi isaretleme teknigi icin yapiyoruz
  public interface IEntity
     {
