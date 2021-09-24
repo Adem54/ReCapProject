@@ -1,5 +1,6 @@
 ﻿using Business.Abstract;
 using Entities.Concrete;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -20,6 +21,7 @@ namespace WebAPI.Controllers
         }
 
        [HttpGet("getall")]
+    //   [Authorize(Roles ="Admin,Cars.GetAll")]
         public IActionResult GetAll()//https://localhost:44361/api/cars/getall
         {
             var result = _carService.GetAll();
@@ -84,6 +86,17 @@ namespace WebAPI.Controllers
                 return Ok(result);
             }
             return BadRequest(result);
+        }
+
+        [HttpPost("transaction")]
+        public IActionResult Transaction(Car car)
+        {
+            var result = _carService.TransactionTest(car);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
         }
           
     }

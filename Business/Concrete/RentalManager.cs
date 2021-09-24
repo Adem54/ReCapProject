@@ -26,19 +26,7 @@ namespace Business.Concrete
             _rentalDal.Add(rental);
             return new SuccessResult(Messages.RentalAdded);
         }
-        //_rentalDal.GetAll() ile veritabanimizdaki Rental listesine ulasiyorduk
-        //Add methodunda sunu da yapabilirdik Rentals veritabanindaki listemizde once parametreden
-        //gelen rentalda  ile gelen  aracin id si listeden hangi aracin id sine  denk geliyor
-        //onu bulurduk nasil bbulurduk foreach ile listelerdik ve id leri karsilastirirdik
-        //Sonrra da listemizde buldugumuz aracin ReturnDate i eger parametredden  gelen aracin
-        //RentDate inden buyuk ise yani bu demektir ki listemizde buldugumuz aracin teslim 
-        //edilis tarihi parametreden gelen veri de ki kiralanma tarihinden daha gec ise
-        //O zaman zaten arac kiralanamaz cunku onun istedigi tarihte arac halen gelmemis olacak!!
-
-      
-
-        
-
+ 
         public IResult Delete(Rental rental)
         {
             return new SuccessResult(Messages.RentalDeleted);

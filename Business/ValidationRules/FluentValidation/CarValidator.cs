@@ -19,12 +19,12 @@ namespace Business.ValidationRules.FluentValidation
             RuleFor(c => c.CarDailyPrice).GreaterThanOrEqualTo(20).When(c => c.CarBrandId == 1);
 
             RuleFor(c => c.CarModelYear).GreaterThanOrEqualTo(2010);
-            RuleFor(c => c.CarName).Must(StartWithA).WithMessage("Cars must start with A letter");
+            //RuleFor(c => c.CarName).Must(StartWithA).WithMessage("Cars must start with A letter");
         }
 
-        private bool StartWithA(string arg)
-        {
-            return arg.StartsWith("A");
-        }
+        //private bool StartWithA(string arg)
+        //{
+        //    return arg.StartsWith("A");
+        //}
     }
 }

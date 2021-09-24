@@ -21,10 +21,12 @@ namespace Business.Abstract
         IResult Update(Car car);
 
         IDataResult<List<CarDetailDto>> CarDetailDtos();
+        IResult TransactionTest(Car car);
 
-      
 
 
-       
+
+
+
     }
 }
