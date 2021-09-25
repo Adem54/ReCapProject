@@ -5,7 +5,7 @@
 
 ### About The Project
 
-The project named ReCapProject is an ASP.NET CORE WEB API project coded with ASP.NET Core framework and C# programming language. In the project, where layered architectures are used, all CRUD operations can be done safely with MSSQL in accordance with normalization rules, as well as offering the opportunity to rent a car to its customers. The project has been prepared taking into account SOLID principles and using Repostory Design Pattern and Microservice Architecture. Authentication and Authorization processes have been implemented in the project and it also includes Caching, Authentication and Transaction features coded using Aspect Oriented Programming via Autofac technology.
+The project named ReCapProject is an ASP.NET CORE WEB API project coded with ASP.NET Core framework and C# programming language. In the project, where layered architectures are used, all CRUD operations can be done safely with MSSQL in accordance with normalization rules, as well as offering the opportunity to rent a car to its customers. The project has been prepared taking into account SOLID principles and using Repostory Design Pattern and Microservice Architecture. Authentication and Authorization processes have been implemented in the project and it also includes Validation,Caching and Transaction features coded using Aspect Oriented Programming via Autofac technology.
 
 ## Built With
 
